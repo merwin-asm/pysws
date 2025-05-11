@@ -5,7 +5,7 @@
 ::wait:/sbin/openrc default
 
 # tty1 with root autologin
-tty1::respawn:/sbin/getty -n -l /bin/login -f root 38400 tty1
+tty1::respawn:/bin/sh -l
 
 # Other getty consoles
 tty2::respawn:/sbin/getty 38400 tty2
@@ -22,3 +22,4 @@ tty6::respawn:/sbin/getty 38400 tty6
 ::ctrlaltdel:/sbin/reboot
 ::shutdown:/sbin/openrc shutdown
 ::restart:/sbin/openrc reboot
+
