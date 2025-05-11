@@ -47,7 +47,7 @@ def scan_local_ips(port=9025, timeout=0.5, subnet='192.168.1.0/24'):
             break
     return input("What is the Host Web Server IP :")
 
-server = "http://" scan_local_ips() + ":9025/"
+server = "http://" +scan_local_ips() + ":9025/"
 
 start_pysws()
 
