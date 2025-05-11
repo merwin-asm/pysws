@@ -1,8 +1,8 @@
-cfdisk /dev/vda
+##cfdisk /dev/sda # uncomment when actually needed
 # Create one Linux partition, write and quit
-mkfs.ext4 /dev/vda1
-mount /dev/vda1 /mnt
-pacstrap /mnt base linux linux-firmware
+##mkfs.ext4 /dev/sda1 # uncomment when actually needed
+mount /dev/sda1 /mnt
+pacstrap /mnt base linux linux-firmware grub
 genfstab -U /mnt >> /mnt/etc/fstab
 arch-chroot /mnt
 
@@ -19,7 +19,7 @@ echo "archvm" > /etc/hostname
 passwd
 
 pacman -S grub
-grub-install --target=i386-pc /dev/vda
+grub-install --target=i386-pc /dev/sda
 grub-mkconfig -o /boot/grub/grub.cfg
 
 
