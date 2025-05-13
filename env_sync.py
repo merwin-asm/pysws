@@ -30,7 +30,7 @@ def download_pysws(server):
     if os.path.exists("/root/pysws_src"):
         os.system("rm -rf /root/pysws_src")
 
-    os.system("unzip pysws.zip -d /root/pysws_src")
+    os.system("unzip pysws.zip -d /root")
 
 def scan_local_ips(port=9025, timeout=0.5, subnet='192.168.1.0/24'):
     for ip in IPv4Network(subnet):
