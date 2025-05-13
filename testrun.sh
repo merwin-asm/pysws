@@ -1,1 +1,1 @@
-zip -r pysws.zip pysws
+zip -r pysws.zip pysws_src

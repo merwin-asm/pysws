@@ -10,7 +10,7 @@ process = None
 
 def start_pysws():
     global process
-    process = subprocess.Popen(['python3', '/root/pysws/main.py'])
+    process = subprocess.Popen(['python3', '/root/pysws_src/main.py'])
 
 def stop_pysws():
     global process
@@ -27,10 +27,10 @@ def download_pysws(server):
     else:
         print(f"Failed to download. Status code: {response.status_code}")
     
-    if os.path.exists("/root/pysws"):
-        os.system("rm -rf /root/pysws")
+    if os.path.exists("/root/pysws_src"):
+        os.system("rm -rf /root/pysws_src")
 
-    os.system("unzip pysws.zip -d /root/pysws")
+    os.system("unzip pysws.zip -d /root/pysws_src")
 
 def scan_local_ips(port=9025, timeout=0.5, subnet='192.168.1.0/24'):
     for ip in IPv4Network(subnet):
