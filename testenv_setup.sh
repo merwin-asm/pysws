@@ -1,4 +1,6 @@
-sed '3,$ s/^#//' /etc/apk/repositories > /etc/apk/repositories
+read -p "Have you uncommented community mirror in /etc/apk/repositories ? cant proceed without it.. (y/n): " ans
+[ "$ans" = "y" ] || exit
+
 apk update
 apk add python3 
 apk add py3-pip
@@ -17,6 +19,9 @@ echo "python3 /root/env_sync.py" > ~/.profile
 pip3 install -r requirements.txt --break-system-packages
 cd pysws
 pip3 install -r requirements.txt --break-system-packages
+
+read -p "Finished setting up.. reboot? (y/n): " ans
+[ "$ans" = "y" ] || exit
 
 # reboot
 reboot

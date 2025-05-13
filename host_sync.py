@@ -39,6 +39,7 @@ def root():
 
 @app.route('/signal')
 def signal():
+    global prev_mod
     mt = mod_time("pysws.zip")
     if prev_mod != mt:  
         prev_mod = mt
